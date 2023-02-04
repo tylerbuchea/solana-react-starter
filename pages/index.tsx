@@ -21,7 +21,7 @@ export default function IndexPage() {
     <div className={styles.container}>
       <h2>Example</h2>
       {!!wallet?.publicKey && (
-        <div>Balance: {wallet?.publicKey?.toString()}</div>
+        <div>Address: {wallet?.publicKey?.toString()}</div>
       )}
       {!!balance && <div>Balance: {balance}</div>}
       <div className={styles.sideBySide}>
