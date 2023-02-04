@@ -11,9 +11,9 @@ export default function IndexPage() {
 
   const fetchUserBalance = useCallback(async () => {
     if (wallet?.publicKey && connection) {
-      console.log(wallet);
+      const SOL_DECIMALS = 9;
       const data = await connection.getBalance(wallet.publicKey);
-      setBalance(data);
+      setBalance(data / 10 ** SOL_DECIMALS);
     }
   }, [wallet, connection]);
 
