@@ -20,7 +20,10 @@ export default function IndexPage() {
   return (
     <div className={styles.container}>
       <h2>Example</h2>
-      <div>Balance: {balance}</div>
+      {!!wallet?.publicKey && (
+        <div>Balance: {wallet?.publicKey?.toString()}</div>
+      )}
+      {!!balance && <div>Balance: {balance}</div>}
       <div className={styles.sideBySide}>
         <button onClick={fetchUserBalance}>Update</button>
         <WalletButton />
